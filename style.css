@@ -1,0 +1,211 @@
+.kapp {
+  background-color: aqua;
+  padding: 10px;
+}
+.kapp .kutu {
+  background-color: brown;
+
+  margin: 5px;
+}
+
+.kap {
+  background-color: aqua;
+  padding: 10px 20px;
+  display: flex; /* flex yapısı elemanları esnek bir biçimde hizalamaya olanak tanır.*/
+  gap: 10px; /* flex ile aynı hizaya getirilen elemanların arasında boşluk vermek için kullanılır.*/
+}
+
+.kap .kutu {
+  background-color: brown;
+}
+
+.kapsayıcı-2 {
+  margin-top: 20px;
+  background-color: aquamarine;
+  padding: 10px;
+  display: flex;
+  /* flex-direction: column;   varsayılan  */
+  flex-direction: row;
+  /* flex-direction özelliği yapının yönünü belirler.
+  Elemanlar default olarak zaten column gelir.
+
+
+  Yapı başlangıçta column şeklindeydi.Ama flex yapısı ile bunu row yapmış olduk.
+  
+  */
+}
+.kapsayıcı-2 .kutu {
+  background-color: chocolate;
+  margin: 5px;
+}
+
+.kapsayıcı-3 {
+  margin-top: 10px;
+  background-color: bisque;
+  padding: 10px;
+  display: flex;
+  flex-direction: row-reverse; /* row-reverse satır içerisindeki yapıyı tam tersine çevirdi*/
+}
+
+.kapsayıcı-3 .kutu {
+  background-color: chocolate;
+  margin: 5px;
+}
+
+.kapsayıcı-4 {
+  margin-top: 10px;
+  background-color: bisque;
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.kapsayıcı-4 .kutu {
+  background-color: chocolate;
+  margin: 5px;
+}
+
+.kapsayıcı-5 {
+  margin-top: 10px;
+  background-color: red;
+  padding: 10px;
+  display: flex;
+  /* justify-content ile elemanın satır içerisinde hizalanması sağlanır. */
+  justify-content: center;
+}
+
+.kapsayıcı-5 .kutu {
+  background-color: aqua;
+  margin: 5px;
+}
+
+.kap-5 {
+  justify-content: space-between; /* Bu sayede kapsayıcı içerisindeki elemanlardan birinici en sola sonuncu en sağa hizalandı.Arada kalan elemanlar ise aradaki boşluğa yerleşti.*/
+}
+
+.kap-6 {
+  justify-content: space-around; /* Bu sayede en soldaki ve en sağdaki yapılar sol ve sağa eşit uzaklık bırakarak yerleşti.Arada kalan elemanlar ise aradaki boşluğa yerleşti.*/
+}
+.kap-7 {
+  justify-content: space-evenly; /* Bu sayede kapsayıcı içerisindeki tüm elemanlar eşit boşluk bırakarak hizanalandı.*/
+}
+
+.örnek-kapsayıcı {
+  margin-top: 20px;
+  background-color: blue;
+  padding: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.örnek-kapsayıcı .eleman {
+  background-color: blanchedalmond;
+  margin: 3px;
+}
+
+/* 
+justify-content ;
+
+center ==> yatayda orta kısıma hizalar.
+
+start ==> yatayda başlangıç kısımına hizalar.
+
+end ==> yatayda bitiş kısımına hizalar
+
+
+space-between ==> en sol ve en sağa birer eleman yaslar aradaki boşluğu diğerlerine bölüştürür
+
+
+space-around ==> en sol ve en sağa birer elemanı eşit boşluk bırakarak yerleştirir  aradaki boşluğu diğerlerine bölüştürür
+
+
+space-evenly ==> yatayda her elemanın arasını eşit boşluk ile açar
+ 
+
+
+
+*/
+
+/* 
+
+Css sözde seçiciler ile elemanlara erişebiliriz.
+
+ :first-child ==> Bu ilk elemanı seçmek için kullanılır.
+
+ :last-child ==> Bu son elemanı seçmek için kullanılır.
+
+ :nth-child() ==> Bu () içerisinde sırası belirtilen elemanı seçmek için kullanılır.
+
+
+
+*/
+
+.buton-kapsayıcı {
+  margin-top: 20px;
+  background-color: wheat;
+  padding: 10px;
+}
+
+.buton-kapsayıcı button:first-child {
+  background-color: red;
+}
+
+.buton-kapsayıcı button:last-child {
+  background-color: hotpink;
+}
+
+.buton-kapsayıcı button:nth-child(3) {
+  background-color: chartreuse;
+}
+
+.buton-kapsayıcı-1 {
+  margin-top: 20px;
+  background-color: gray;
+  padding: 10px;
+}
+
+.btn-1 {
+  transition: all 0.5;
+}
+.btn-1:hover {
+  background-color: black;
+  color: white;
+}
+.btn-2:hover {
+  background-color: green;
+  color: white;
+}
+
+.btn-3:hover {
+  background-color: red;
+  transform: scale(1.8);
+}
+.btn-4:hover {
+  background-color: palegreen;
+  transform: translateY(-20px);
+}
+/* 
+.hover ile elemanın üzerine gelinen anı ve bu anda olması istenen değişiklikleri belirtebiliriz.
+
+
+transition ile elemanın üzerindeki değişiklikleri yavaşlatabiliriz.
+
+ transform:scale özelliği elemanın boyutlaması yapar.Default değeri 1 dir. 
+
+   transform: translateX(20px); Bu özellik ile elemanı 20px x ekseninde öteleriz.
+
+   Verilen değer
+
+   + ==>   x ekseninde sağa öteler
+
+   - ==>   x  ekseninde sola öteler
+
+   transform: translateY(20px);  Bu özellik ile elemanı 20px y ekseninde öteleriz.
+
+
+   Verilen değer
+
+   + ==>  y ekseninde aşşağı öteler
+
+   - ==>  y ekseninde yukarı öteler
+
+*/
